@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel — CrazeByte Dev Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="admin">
+
+  <div class="app-shell">
+    <aside class="sidebar" id="appSidebar"></aside>
+
+    <div>
+      <header class="topbar" id="appTopbar"></header>
+
+      <main class="main-content">
+        <div class="page-head">
+          <div>
+            <h1>Admin panel</h1>
+            <p>Manage users, tickets, and view studio-wide analytics.</p>
+          </div>
+        </div>
+
+        <div id="adminContent">
+          <div class="admin-tabs">
+            <button class="admin-tab active" data-pane="paneUsers">Users</button>
+            <button class="admin-tab" data-pane="paneTickets">Tickets</button>
+            <button class="admin-tab" data-pane="paneAnalytics">Analytics</button>
+          </div>
+
+          <div class="admin-pane glass" id="paneUsers" style="padding:20px;"></div>
+
+          <div class="admin-pane glass" id="paneTickets" style="padding:20px;" hidden></div>
+
+          <div class="admin-pane" id="paneAnalytics" hidden>
+            <div class="kpi-row">
+              <div class="kpi-card glass">
+                <span class="kpi-label">Total tickets</span>
+                <div class="kpi-value" id="kpiTotalTickets">0</div>
+              </div>
+              <div class="kpi-card glass">
+                <span class="kpi-label">Open tickets</span>
+                <div class="kpi-value" id="kpiOpenTickets">0</div>
+              </div>
+              <div class="kpi-card glass">
+                <span class="kpi-label">Avg. service progress</span>
+                <div class="kpi-value" id="kpiAvgProgress">0%</div>
+              </div>
+              <div class="kpi-card glass">
+                <span class="kpi-label">Total users</span>
+                <div class="kpi-value" id="kpiUsers">0</div>
+              </div>
+            </div>
+
+            <div class="analytics-grid">
+              <div class="panel glass">
+                <div class="panel-head"><h3>Client satisfaction — last 14 days</h3></div>
+                <div id="analyticsLineChart"></div>
+              </div>
+              <div class="panel glass">
+                <div class="panel-head"><h3>Ticket status breakdown</h3></div>
+                <div class="donut-wrap">
+                  <div id="analyticsDonutChart"></div>
+                  <div class="donut-legend">
+                    <div class="legend-row"><span class="legend-dot" style="background:#3B82F6"></span>Open</div>
+                    <div class="legend-row"><span class="legend-dot" style="background:#8B5CF6"></span>In Progress</div>
+                    <div class="legend-row"><span class="legend-dot" style="background:#22D3EE"></span>Closed</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel glass">
+              <div class="panel-head"><h3>New tickets — last 7 days</h3></div>
+              <div id="analyticsBarChart"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

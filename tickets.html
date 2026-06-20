@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tickets — CrazeByte Dev Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="tickets">
+
+  <div class="app-shell">
+    <aside class="sidebar" id="appSidebar"></aside>
+
+    <div>
+      <header class="topbar" id="appTopbar"></header>
+
+      <main class="main-content">
+        <div class="page-head">
+          <div>
+            <h1>Support tickets</h1>
+            <p>Track every request from open to resolved.</p>
+          </div>
+          <button class="btn-primary" id="newTicketBtn">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+            <span>New ticket</span>
+          </button>
+        </div>
+
+        <div class="tickets-toolbar">
+          <div class="filter-pills" id="ticketFilters">
+            <button class="filter-pill active" data-filter="All">All</button>
+            <button class="filter-pill" data-filter="Open">Open</button>
+            <button class="filter-pill" data-filter="In Progress">In Progress</button>
+            <button class="filter-pill" data-filter="Closed">Closed</button>
+          </div>
+          <div class="toolbar-search">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.7"/><path d="m20 20-4.3-4.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+            <input type="text" id="ticketSearchInput" placeholder="Search tickets…" />
+          </div>
+        </div>
+
+        <div class="tickets-list" id="ticketsList"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

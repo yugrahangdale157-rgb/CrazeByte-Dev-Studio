@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile — CrazeByte Dev Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="profile">
+
+  <div class="app-shell">
+    <aside class="sidebar" id="appSidebar"></aside>
+
+    <div>
+      <header class="topbar" id="appTopbar"></header>
+
+      <main class="main-content">
+        <div class="page-head">
+          <div>
+            <h1>Your profile</h1>
+            <p>Manage your account details, security, and activity.</p>
+          </div>
+        </div>
+
+        <div class="profile-grid">
+          <div class="profile-card glass">
+            <div class="avatar big" id="profileAvatar"></div>
+            <h3 id="profileName">—</h3>
+            <div id="profileRole"></div>
+            <p class="company" id="profileCompany">—</p>
+          </div>
+
+          <div class="settings-stack">
+            <div class="panel glass">
+              <div class="panel-head"><h3>Account information</h3></div>
+              <form class="form" id="infoForm">
+                <div class="form-row">
+                  <label>Full name
+                    <input type="text" id="infoName" required />
+                  </label>
+                  <label>Email address
+                    <input type="email" id="infoEmail" required />
+                  </label>
+                </div>
+                <div class="form-row">
+                  <label>Company
+                    <input type="text" id="infoCompany" />
+                  </label>
+                  <label>Job title
+                    <input type="text" id="infoTitle" />
+                  </label>
+                </div>
+                <label>Phone number
+                  <input type="text" id="infoPhone" />
+                </label>
+                <label>Bio
+                  <textarea id="infoBio" rows="3" placeholder="A short bio about you or your role"></textarea>
+                </label>
+                <button type="submit" class="btn-primary" style="align-self:flex-start;">
+                  <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span>Save changes</span>
+                </button>
+              </form>
+            </div>
+
+            <div class="panel glass">
+              <div class="panel-head"><h3>Change password</h3></div>
+              <form class="form" id="passwordForm">
+                <label>Current password
+                  <input type="password" id="currentPassword" required />
+                </label>
+                <div class="form-row">
+                  <label>New password
+                    <input type="password" id="newPassword" required minlength="6" />
+                  </label>
+                  <label>Confirm new password
+                    <input type="password" id="confirmPassword" required minlength="6" />
+                  </label>
+                </div>
+                <button type="submit" class="btn-secondary" style="align-self:flex-start;">Update password</button>
+              </form>
+            </div>
+
+            <div class="panel glass">
+              <div class="panel-head"><h3>Your activity</h3></div>
+              <div id="profileActivity"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

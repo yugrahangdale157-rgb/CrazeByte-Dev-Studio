@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — CrazeByte Dev Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="dashboard">
+
+  <div class="app-shell">
+    <aside class="sidebar" id="appSidebar"></aside>
+
+    <div>
+      <header class="topbar" id="appTopbar"></header>
+
+      <main class="main-content">
+        <div class="page-head">
+          <div>
+            <h1>Welcome back, <span id="welcomeName">there</span></h1>
+            <p>Here's what's happening across your workspace today.</p>
+          </div>
+          <button class="btn-primary" id="newTicketQuickBtn">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+            <span>New ticket</span>
+          </button>
+        </div>
+
+        <div class="stats-grid" id="statsGrid"></div>
+
+        <div class="dash-grid">
+          <div class="welcome-card glass">
+            <h2>You're signed in as <span id="welcomeRole">USER</span></h2>
+            <p>Your workspace stays in sync automatically — tickets, messages, and service progress update the moment anything changes, no refresh needed.</p>
+          </div>
+
+          <div class="panel glass">
+            <div class="panel-head">
+              <h3>Recent activity</h3>
+              <a href="tickets.html">View tickets</a>
+            </div>
+            <div id="activityFeed"></div>
+          </div>
+        </div>
+
+        <div class="panel glass" style="margin-bottom:18px;">
+          <div class="panel-head">
+            <h3>Ticket volume — last 14 days</h3>
+          </div>
+          <div id="dashboardChart"></div>
+        </div>
+
+        <div class="panel-head" id="services">
+          <h3 style="font-size:17px;">Active services</h3>
+          <a href="admin.html">Manage all</a>
+        </div>
+        <div class="services-row" id="servicesPreview"></div>
+      </main>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

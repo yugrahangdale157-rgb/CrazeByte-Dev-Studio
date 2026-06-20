@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrazeByte Dev Studio — Client Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="auth">
+
+  <div class="auth-shell">
+    <section class="auth-visual">
+      <div class="brand">
+        <span class="icon brand-mark"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="url(#g1)"/><path d="M10 21V11l6 5 6-5v10" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g1" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#3B82F6"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs></svg></span>
+        <div class="brand-text">
+          <strong>CrazeByte</strong>
+          <span>Dev Studio</span>
+        </div>
+      </div>
+
+      <div class="auth-hero">
+        <h1>The client workspace built for <span>shipping fast.</span></h1>
+        <p>Track every ticket, ping your team in real time, and watch your project's progress update the moment something changes. One workspace for support, delivery, and reporting.</p>
+      </div>
+
+      <div class="auth-stats">
+        <div><strong>4.2k+</strong><span>Tickets resolved</span></div>
+        <div><strong>99.97%</strong><span>Uptime SLA</span></div>
+        <div><strong>11min</strong><span>Avg. response time</span></div>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card glass">
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tabLogin">Sign in</button>
+          <button class="auth-tab" id="tabRegister">Create account</button>
+        </div>
+
+        <div class="auth-error" id="authError" hidden></div>
+
+        <form id="loginForm" class="form">
+          <label>Email address
+            <input type="email" id="loginEmail" placeholder="you@company.com" required />
+          </label>
+          <label>Password
+            <input type="password" id="loginPassword" placeholder="••••••••" required />
+          </label>
+          <button type="submit" class="btn-primary full">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M13 5l7 7-7 7M20 12H4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>Sign in to portal</span>
+          </button>
+        </form>
+
+        <form id="registerForm" class="form" hidden>
+          <label>Full name
+            <input type="text" id="regName" placeholder="Jamie Rivera" required />
+          </label>
+          <label>Email address
+            <input type="email" id="regEmail" placeholder="you@company.com" required />
+          </label>
+          <label>Company
+            <input type="text" id="regCompany" placeholder="Acme Industries" />
+          </label>
+          <label>Password
+            <input type="password" id="regPassword" placeholder="At least 6 characters" required minlength="6" />
+          </label>
+          <label>Account role (simulation)
+            <div class="role-select-grid">
+              <div class="role-option">
+                <input type="radio" name="regRole" id="roleUser" value="USER" checked />
+                <label for="roleUser">Client / User</label>
+              </div>
+              <div class="role-option">
+                <input type="radio" name="regRole" id="roleMod" value="MODERATOR" />
+                <label for="roleMod">Moderator</label>
+              </div>
+              <div class="role-option">
+                <input type="radio" name="regRole" id="roleAdmin" value="ADMIN" />
+                <label for="roleAdmin">Admin</label>
+              </div>
+              <div class="role-option">
+                <input type="radio" name="regRole" id="roleOwner" value="OWNER" />
+                <label for="roleOwner">Owner</label>
+              </div>
+            </div>
+          </label>
+          <button type="submit" class="btn-primary full">
+            <span class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+            <span>Create account</span>
+          </button>
+        </form>
+
+        <div class="auth-foot">
+          Demo accounts — tap to autofill:
+          <div class="demo-row">
+            <button class="demo-chip" data-email="owner@crazebyte.dev" data-password="Owner@123">Owner</button>
+            <button class="demo-chip" data-email="admin@crazebyte.dev" data-password="Admin@123">Admin</button>
+            <button class="demo-chip" data-email="mod@crazebyte.dev" data-password="Mod@12345">Moderator</button>
+            <button class="demo-chip" data-email="client@acme.com" data-password="Client@123">Client</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
